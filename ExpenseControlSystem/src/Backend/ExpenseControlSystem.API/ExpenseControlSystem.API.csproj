@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExpenseControlSystem.Application\ExpenseControlSystem.Application.csproj" />
+    <ProjectReference Include="..\ExpenseControlSystem.Infrastructure\ExpenseControlSystem.Infrastructure.csproj" />
+    <ProjectReference Include="..\ExpenseControlSystem.IoC\ExpenseControlSystem.IoC.csproj" />
+  </ItemGroup>
+
+</Project>
