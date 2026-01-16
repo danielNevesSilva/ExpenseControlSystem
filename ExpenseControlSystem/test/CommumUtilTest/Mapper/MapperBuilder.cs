@@ -1,15 +1,8 @@
-﻿using AutoMapper;
-using ExpenseControlSystem.Application.AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ExpenseControlSystem.Application.AutoMapper;
 
 namespace CommumUtilTest.Mapper
 {
     using AutoMapper;
-    using Microsoft.Extensions.Logging.Abstractions;
 
     public static class MapperBuilder
     {
@@ -19,7 +12,7 @@ namespace CommumUtilTest.Mapper
             {
                 cfg.AddProfile<DomainToViewModelMappingProfile>();
                 cfg.AddProfile<ViewModelToDomainMappingProfile>();
-            }, NullLoggerFactory.Instance);
+            });
 
             mapperConfig.AssertConfigurationIsValid();
 

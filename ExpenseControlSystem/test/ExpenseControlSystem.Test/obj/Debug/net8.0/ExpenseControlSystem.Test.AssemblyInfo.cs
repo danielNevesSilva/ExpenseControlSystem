@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExpenseControlSystem.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ccbba4fbf60429ff65cee3f9ff3b270aed4cc8c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4198c1ade4889cf039d9f3fec2fe283439107548")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExpenseControlSystem.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExpenseControlSystem.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

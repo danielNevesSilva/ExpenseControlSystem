@@ -21,6 +21,7 @@ namespace ExpenseControlSystem.IoC
         public static void RegiiterServices(IServiceCollection service)
         {
             service.AddAutoMapperSetup();
+
             service.AddScoped<IUnitOfWork, UnitOfWork>();
 
             service.AddScoped<IPersonRepository, RepositoryPerson>();

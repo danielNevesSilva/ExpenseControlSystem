@@ -1,9 +1,3 @@
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.csproj.AssemblyReference.cache
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.AssemblyInfoInputs.cache
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.AssemblyInfo.cs
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.csproj.CoreCompileInputs.cache
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.sourcelink.json
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\bin\Debug\net8.0\CommumUtilTest.deps.json
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\bin\Debug\net8.0\CommumUtilTest.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\bin\Debug\net8.0\CommumUtilTest.pdb
@@ -11,6 +5,12 @@ C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumU
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\bin\Debug\net8.0\ExpenseControlSystem.Domain.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\bin\Debug\net8.0\ExpenseControlSystem.Application.pdb
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\bin\Debug\net8.0\ExpenseControlSystem.Domain.pdb
+C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.csproj.AssemblyReference.cache
+C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.AssemblyInfoInputs.cache
+C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.AssemblyInfo.cs
+C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.csproj.CoreCompileInputs.cache
+C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.sourcelink.json
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUt.D343F356.Up2Date
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\CommumUtilTest.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\CommumUtilTest\obj\Debug\net8.0\refint\CommumUtilTest.dll

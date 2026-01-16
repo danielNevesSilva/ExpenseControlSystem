@@ -9,18 +9,14 @@ C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\Expense
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\ExpenseControlSystem.Test.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\ExpenseControlSystem.Test.pdb
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Bogus.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Castle.Core.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.TestPlatform.CoreUtilities.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
@@ -31,7 +27,6 @@ C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\Expense
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Moq.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\NuGet.Frameworks.dll
-C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\xunit.abstractions.dll
 C:\Users\Dnsilva\ProjetoS\ExpenseControlSystem\ExpenseControlSystem\test\ExpenseControlSystem.Test\bin\Debug\net8.0\xunit.assert.dll

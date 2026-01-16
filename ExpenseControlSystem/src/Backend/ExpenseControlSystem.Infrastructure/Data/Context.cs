@@ -20,6 +20,24 @@ namespace ExpenseControlSystem.Infrastructure.Data
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                // Caminho relativo a partir da pasta de execução
+                var databasePath = Path.Combine("Database", "expensecontrol.db");
+
+                // Para desenvolvimento - cria o diretório se não existir
+                var directory = Path.GetDirectoryName(databasePath);
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+
+                optionsBuilder.UseSqlite($"Data Source={databasePath}");
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
