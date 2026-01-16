@@ -1,0 +1,14 @@
+﻿namespace ExpenseControlSystem.Application.AutoMapper
+{
+    public class AutoMapperConfiguration
+    {
+        public static Type[] RegisterMappings()
+        {
+            return new Type[]
+            {
+                typeof(DomainToViewModelMappingProfile),
+                typeof(ViewModelToDomainMappingProfile)
+            };
+        }
+    }
+}
