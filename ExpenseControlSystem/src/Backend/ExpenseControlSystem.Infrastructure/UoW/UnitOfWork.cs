@@ -1,5 +1,6 @@
 ﻿using ExpenseControlSystem.Domain.Interfaces.IoC;
 using ExpenseControlSystem.Infrastructure.Data;
+using System.Threading.Tasks;
 
 namespace ExpenseControlSystem.Infrastructure.UoW
 {
@@ -12,11 +13,11 @@ namespace ExpenseControlSystem.Infrastructure.UoW
             _context = context;
         }
 
-        public bool Commit()
+        public async Task<bool> Commit()
         {
-            var changes = _context.SaveChanges();
+            var changes = _context.SaveChangesAsync();
 
-            return changes > 0;
+            return await changes > 0;
 
         }
     }

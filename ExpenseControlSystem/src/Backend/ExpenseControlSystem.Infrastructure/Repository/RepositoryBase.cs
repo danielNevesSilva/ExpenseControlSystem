@@ -27,7 +27,8 @@ namespace ExpenseControlSystem.Infrastructure.Repository
 
         public async Task DeleteAsync(T entity)
         {
-            await Task.FromResult(_dbSet.Remove(entity));
+            _dbSet.Attach(entity);
+            _dbSet.Remove(entity);
         }
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {

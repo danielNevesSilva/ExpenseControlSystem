@@ -1,0 +1,56 @@
+/* frontend/src/App.css */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scroll suave */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Ajustes para tables */
+.MuiTable-root {
+  min-width: 650px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .MuiTable-root {
+    min-width: auto;
+  }
+  
+  .MuiTypography-h3 {
+    font-size: 1.8rem !important;
+  }
+  
+  .MuiTypography-h4 {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Animações suaves */
+.MuiPaper-root {
+  transition: all 0.3s ease;
+}
+
+.MuiPaper-root:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Cores personalizadas */
+.success-chip {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+.error-chip {
+  background-color: #f44336 !important;
+  color: white !important;
+}
+
+.warning-chip {
+  background-color: #ff9800 !important;
+  color: white !important;
+}

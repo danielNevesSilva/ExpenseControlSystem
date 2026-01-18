@@ -6054,23 +6054,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dnsilva\\.nuget\\packages\\": {},
+    "C:\\Users\\danie\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj",
+      "projectUniqueName": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj",
       "projectName": "ExpenseControlSystem.Test",
-      "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj",
-      "packagesPath": "C:\\Users\\Dnsilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\obj\\",
+      "projectPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj",
+      "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dnsilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6085,11 +6085,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj": {
-              "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj"
+            "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj": {
+              "projectPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj"
             },
-            "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj": {
-              "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj"
+            "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj": {
+              "projectPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj"
             }
           }
         }
@@ -6102,9 +6102,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -6143,30 +6143,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Net.Http' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-7jgj-8wvc-jh57",
-      "libraryId": "System.Net.Http",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Text.RegularExpressions' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-cmhx-cq75-c4mj",
-      "libraryId": "System.Text.RegularExpressions",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

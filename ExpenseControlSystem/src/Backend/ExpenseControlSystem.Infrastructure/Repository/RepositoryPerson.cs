@@ -18,7 +18,7 @@ namespace ExpenseControlSystem.Infrastructure.Repository
         }
         public async Task<Person> GetByIdAsync(int id)
         {
-            return await _context.Persons.FindAsync(id);
+            return await _context.Persons.AsNoTracking().FirstOrDefaultAsync(x=>x.Id == id);
         }
 
         public override async Task<IEnumerable<Person>> GetAllAsync()

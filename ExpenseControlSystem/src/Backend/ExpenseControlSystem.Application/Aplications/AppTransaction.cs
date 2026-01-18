@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using ExpenseControlSystem.Application.Dto;
+using ExpenseControlSystem.Application.Exceptions;
 using ExpenseControlSystem.Application.Interfaces;
+using ExpenseControlSystem.Application.Validation;
 using ExpenseControlSystem.Application.ViewModel;
 using ExpenseControlSystem.Domain.Entities;
 using ExpenseControlSystem.Domain.Interfaces.Service;
@@ -10,23 +13,31 @@ namespace ExpenseControlSystem.Application.Aplications
     {
         protected readonly IMapper _mapper;
         protected readonly IServiceTransaction _serviceTransaction;
+        protected readonly IServicePerson _servicePerson;
 
-        public AppTransaction(IServiceTransaction serviceTransaction, IMapper mapper)
+        public AppTransaction(IServiceTransaction serviceTransaction,IServicePerson servicePerson ,IMapper mapper)
         {
             _mapper = mapper;
             _serviceTransaction = serviceTransaction;
+            _servicePerson = servicePerson;
 
         }
-        public async Task AddAsync(TransactionViewModel entity)
+        public async Task AddAsync(CreateTransactionDto entity)
         {
             var v = _mapper.Map<Transaction>(entity);
-            _serviceTransaction.AddAsync(v);
+            await _serviceTransaction.AddAsync(v);
+        }
+        public async Task Execute(CreateTransactionDto entity)
+        {
+            await ValidateRequestCreate(entity);
+            var v = _mapper.Map<Transaction>(entity);
+            await _serviceTransaction.AddAsync(v);
         }
 
         public async Task DeleteAsync(TransactionViewModel entity)
         {
             var v = _mapper.Map<Transaction>(entity);
-            _serviceTransaction.DeleteAsync(v);
+            await _serviceTransaction.DeleteAsync(v);
         }
 
         public async Task<IEnumerable<TransactionViewModel>> GetAllAsync()
@@ -41,10 +52,11 @@ namespace ExpenseControlSystem.Application.Aplications
             return _mapper.Map<TransactionViewModel>(v);
         }
 
-        public async Task UpdateAsync(TransactionViewModel entity)
+        public async Task UpdateAsync(UpdateTransactionDto entity)
         {
+            await ValidateRequestUpdate(entity);
             var v = _mapper.Map<Transaction>(entity);
-            _serviceTransaction.UpdateAsync(v);
+            await _serviceTransaction.UpdateAsync(v);
         }
         public async Task<IEnumerable<TransactionViewModel>> GetByPersonIdAsync(int personId)
         {
@@ -70,6 +82,28 @@ namespace ExpenseControlSystem.Application.Aplications
             return v;
         }
 
+        public async Task ValidateRequestCreate(CreateTransactionDto model)
+        {
+            var v = new CreateTransactionValidation(_servicePerson);
+            var result = await v.ValidateAsync(model);
+
+            if (!result.IsValid)
+            {
+                var erroMessages = result.Errors.Select(e => e.ErrorMessage).ToList();
+                throw new ErrorOnValidationException(erroMessages);
+            }
+        }
+        public async Task ValidateRequestUpdate(UpdateTransactionDto model)
+        {
+            var v = new UpdateTransactionValidation(_servicePerson);
+            var result = await v.ValidateAsync(model);
+
+            if (!result.IsValid)
+            {
+                var erroMessages = result.Errors.Select(e => e.ErrorMessage).ToList();
+                throw new ErrorOnValidationException(erroMessages);
+            }
+        }
 
         public void Dispose()
         {

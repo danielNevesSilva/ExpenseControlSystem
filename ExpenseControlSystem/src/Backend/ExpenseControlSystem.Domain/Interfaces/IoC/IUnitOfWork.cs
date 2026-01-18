@@ -8,6 +8,6 @@ namespace ExpenseControlSystem.Domain.Interfaces.IoC
 {
     public interface IUnitOfWork
     {
-        bool Commit();
+       Task <bool> Commit();
     }
 }

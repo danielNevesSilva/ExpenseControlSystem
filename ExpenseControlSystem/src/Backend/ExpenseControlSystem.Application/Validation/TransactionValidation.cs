@@ -1,10 +1,5 @@
 ﻿using ExpenseControlSystem.Application.ViewModel;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExpenseControlSystem.Application.Validation
 {
@@ -27,6 +22,11 @@ namespace ExpenseControlSystem.Application.Validation
 
             RuleFor(x => x.PersonId)
                 .GreaterThan(0).WithMessage("Pessoa é obrigatória");
+
+            RuleFor(x => x.Person.Age)
+                .Must(age => age >= 18)
+                .WithMessage("Pessoa com menos de 18 anos não podem ter receita.")
+                .When(x=>x.Type == Domain.Enums.TransactionType.Income);
         }
     }
 }

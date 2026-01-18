@@ -41,7 +41,7 @@ namespace ExpenseControlSystem.Application.Aplications
 
         public async Task<IEnumerable<PersonViewModel>> GetAllAsync()
         {
-            var v = _servicePerson.GetAllAsync();
+            var v = await _servicePerson.GetAllAsync();
             return _mapper.Map<IEnumerable<PersonViewModel>>(v);
         }
 

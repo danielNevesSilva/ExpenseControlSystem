@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿using ExpenseControlSystem.Application.Dto;
+using ExpenseControlSystem.Application.Exceptions;
+using ExpenseControlSystem.Application.Exceptions;
 using ExpenseControlSystem.Application.Interfaces;
 using ExpenseControlSystem.Application.ViewModel;
+using ExpenseControlSystem.Domain.Enums;
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace ExpenseControlSystem.API.Controllers
@@ -109,7 +112,7 @@ namespace ExpenseControlSystem.API.Controllers
         [ProducesResponseType(typeof(TransactionViewModel), 201)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        public async Task<ActionResult<TransactionViewModel>> Create([FromBody] TransactionViewModel viewModel)
+        public async Task<ActionResult<TransactionViewModel>> Create([FromBody] CreateTransactionDto viewModel)
         {
             try
             {
@@ -118,29 +121,28 @@ namespace ExpenseControlSystem.API.Controllers
                 {
                     return BadRequest(ModelState);
                 }
-
-                await _appTransaction.AddAsync(viewModel);
+                await _appTransaction.Execute(viewModel);
 
                 // Pega a transação criada para retornar com dados completos
                 var createdTransaction = await _appTransaction.GetByIdAsync(viewModel.Id);
                 return CreatedAtAction(nameof(GetById), new { id = viewModel.Id }, createdTransaction);
             }
-            catch (ValidationException ex)
+            catch (ErrorOnValidationException ex)
             {
                 // Validações de negócio (menor idade, categoria incompatível, etc.)
-                return BadRequest(new { error = ex.Message });
+                return BadRequest(new { message = ex.Message });
             }
             catch (KeyNotFoundException ex)
             {
-                return NotFound(new { error = ex.Message });
+                return NotFound(new { message = ex.Message });
             }
             catch (ArgumentException ex)
             {
-                return BadRequest(new { error = ex.Message });
+                return BadRequest(new { message = ex.Message });
             }
             catch (InvalidOperationException ex)
             {
-                return BadRequest(new { error = ex.Message });
+                return BadRequest(new { message = ex.Message });
             }
             catch (Exception)
             {
@@ -158,14 +160,10 @@ namespace ExpenseControlSystem.API.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> Update(int id, [FromBody] TransactionViewModel viewModel)
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateTransactionDto viewModel)
         {
             try
             {
-                if (id != viewModel.Id)
-                {
-                    return BadRequest(new { error = "ID na rota não corresponde ao ID no corpo da requisição" });
-                }
 
                 if (!ModelState.IsValid)
                 {
@@ -175,13 +173,18 @@ namespace ExpenseControlSystem.API.Controllers
                 await _appTransaction.UpdateAsync(viewModel);
                 return NoContent();
             }
+            catch (ErrorOnValidationException ex)
+            {
+                // Validações de negócio (menor idade, categoria incompatível, etc.)
+                return BadRequest(new { message = ex.Message });
+            }
             catch (KeyNotFoundException ex)
             {
-                return NotFound(new { error = ex.Message });
+                return NotFound(new { message = ex.Message });
             }
             catch (ValidationException ex)
             {
-                return BadRequest(new { error = ex.Message });
+                return BadRequest(new { message = ex.Message });
             }
             catch (Exception)
             {
@@ -221,10 +224,6 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Retorna o total de receitas de uma pessoa
-        /// </summary>
-        /// <param name="personId">ID da pessoa</param>
         [HttpGet("person/{personId}/total-income")]
         [ProducesResponseType(typeof(decimal), 200)]
         [ProducesResponseType(500)]
@@ -241,10 +240,6 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Retorna o total de despesas de uma pessoa
-        /// </summary>
-        /// <param name="personId">ID da pessoa</param>
         [HttpGet("person/{personId}/total-expense")]
         [ProducesResponseType(typeof(decimal), 200)]
         [ProducesResponseType(500)]

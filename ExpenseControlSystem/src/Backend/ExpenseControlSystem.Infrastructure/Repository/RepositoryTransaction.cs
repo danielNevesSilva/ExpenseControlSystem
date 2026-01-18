@@ -39,22 +39,33 @@ namespace ExpenseControlSystem.Infrastructure.Repository
 
         public async Task<decimal> GetTotalIncomeByPersonAsync(int personId)
         {
-            return await _context.Transactions
-                .Where(t => t.PersonId == personId && t.Type == TransactionType.Income)
-                .SumAsync(t => t.Amount);
+            // return await _context.Transactions
+            //     .Where(t => t.PersonId == personId && t.Type == TransactionType.Income)
+            //     .SumAsync(t => t.Amount);
+            var sumAsDouble = await _context.Transactions
+            .Where(t => t.PersonId == personId && t.Type == TransactionType.Income)
+            .SumAsync(t => (double)t.Amount);
+
+            return (decimal)sumAsDouble;
         }
 
         public async Task<decimal> GetTotalExpenseByPersonAsync(int personId)
         {
-            return await _context.Transactions
-                .Where(t => t.PersonId == personId && t.Type == TransactionType.Expense)
-                .SumAsync(t => t.Amount);
+            //return await _context.Transactions
+            //    .Where(t => t.PersonId == personId && t.Type == TransactionType.Expense)
+            //    .SumAsync(t => t.Amount);
+            var sumAsDouble = await _context.Transactions
+        .Where(t => t.PersonId == personId && t.Type == TransactionType.Expense)
+        .SumAsync(t => (double)t.Amount);
+
+            return (decimal)sumAsDouble;
         }
 
         // Se quiser incluir relacionamentos nos métodos genéricos
         public override async Task<Transaction> GetByIdAsync(int id)
         {
             return await _context.Transactions
+                .AsNoTracking()
                 .Include(t => t.Person)
                 .Include(t => t.Category)
                 .FirstOrDefaultAsync(t => t.Id == id);

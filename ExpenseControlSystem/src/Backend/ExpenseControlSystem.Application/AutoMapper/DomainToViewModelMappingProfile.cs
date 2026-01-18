@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using ExpenseControlSystem.Application.Dto;
+using ExpenseControlSystem.Application.NovaPasta;
 using ExpenseControlSystem.Application.ViewModel;
 using ExpenseControlSystem.Domain.Entities;
 
@@ -15,6 +17,10 @@ namespace ExpenseControlSystem.Application.AutoMapper
             CreateMap<Category, CategoryViewModel>()
                 .ForMember(dest => dest.Purpose,
                     opt => opt.MapFrom(src => src.Purpose.ToString()));
+
+            CreateMap<Category, CreateCategoryDto>();
+            CreateMap<Transaction, CreateTransactionDto>();
+            CreateMap<Transaction, UpdateTransactionDto>();
 
             // Mapeamento de Transaction
             CreateMap<Transaction, TransactionViewModel>()

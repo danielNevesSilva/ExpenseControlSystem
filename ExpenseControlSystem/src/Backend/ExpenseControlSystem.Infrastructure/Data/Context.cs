@@ -76,6 +76,7 @@ namespace ExpenseControlSystem.Infrastructure.Data
                       .HasForeignKey(t => t.CategoryId)
                       .OnDelete(DeleteBehavior.Restrict); // Não permite deletar categoria com transações
             });
+
         }
     }
 }

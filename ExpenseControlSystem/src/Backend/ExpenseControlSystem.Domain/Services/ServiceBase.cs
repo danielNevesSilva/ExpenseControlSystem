@@ -16,16 +16,16 @@ namespace ExpenseControlSystem.Domain.Services
 
         }
 
-        public void AddAsync(T entity)
+        public async Task AddAsync(T entity)
         {
-            _repositoryBase.AddAsync(entity);
-            _unitOfWork.Commit();
+            await _repositoryBase.AddAsync(entity);
+            await _unitOfWork.Commit();
         }
 
-        public void DeleteAsync(T entity)
+        public async Task DeleteAsync(T entity)
         {
-            _repositoryBase.DeleteAsync(entity);
-            _unitOfWork.Commit();
+            await _repositoryBase.DeleteAsync(entity);
+            await _unitOfWork.Commit();
         }
 
         public Task<IEnumerable<T>> GetAllAsync()
@@ -39,10 +39,10 @@ namespace ExpenseControlSystem.Domain.Services
             return _repositoryBase.GetByIdAsync(id);
         }
 
-        public void UpdateAsync(T entity)
+        public async Task UpdateAsync(T entity)
         {
-            _repositoryBase.UpdateAsync(entity);
-            _unitOfWork.Commit();
+            await _repositoryBase.UpdateAsync(entity);
+            await _unitOfWork.Commit();
         }
 
         public void Dispose()

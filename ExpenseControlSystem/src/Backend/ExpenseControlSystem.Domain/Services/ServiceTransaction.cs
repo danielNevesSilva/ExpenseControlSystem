@@ -27,7 +27,7 @@ namespace ExpenseControlSystem.Domain.Services
 
         public async Task<decimal> GetTotalExpenseByPersonAsync(int personId)
         {
-            return await _repository.GetTotalIncomeByPersonAsync(personId);
+            return await _repository.GetTotalExpenseByPersonAsync(personId);
         }
 
         public async Task<decimal> GetTotalIncomeByPersonAsync(int personId)

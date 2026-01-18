@@ -1,4 +1,5 @@
-﻿using ExpenseControlSystem.Application.ViewModel;
+﻿using ExpenseControlSystem.Application.Dto;
+using ExpenseControlSystem.Application.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,9 @@ namespace ExpenseControlSystem.Application.Interfaces
     {
         Task<TransactionViewModel> GetByIdAsync(int id);
         Task<IEnumerable<TransactionViewModel>> GetAllAsync();
-        Task AddAsync(TransactionViewModel entity);
-        Task UpdateAsync(TransactionViewModel entity);
+        Task AddAsync(CreateTransactionDto entity);
+        Task Execute(CreateTransactionDto entity);
+        Task UpdateAsync(UpdateTransactionDto entity);
         Task DeleteAsync(TransactionViewModel entity);
         Task<IEnumerable<TransactionViewModel>> GetByPersonIdAsync(int personId);
         Task<IEnumerable<TransactionViewModel>> GetByCategoryIdAsync(int categoryId);
