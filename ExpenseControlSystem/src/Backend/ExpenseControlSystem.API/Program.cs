@@ -1,7 +1,15 @@
+using ExpenseControlSystem.Infrastructure.Data;
 using ExpenseControlSystem.IoC;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+if (builder.Environment.IsEnvironment("Test"))
+{
+    builder.Services.AddDbContext<Context>(options =>
+        options.UseInMemoryDatabase("TestDb"));
+}
 
 builder.Services.AddControllers();
 
@@ -45,3 +53,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program
+{
+    protected Program() { }
+}

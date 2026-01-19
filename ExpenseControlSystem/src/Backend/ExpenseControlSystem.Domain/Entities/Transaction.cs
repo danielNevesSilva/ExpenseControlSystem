@@ -4,16 +4,16 @@ namespace ExpenseControlSystem.Domain.Entities
 {
     public class Transaction : BaseEntity
     {
-        public string Description { get; private set; }
-        public decimal Amount { get; private set; }
-        public TransactionType Type { get; private set; }
-        public int CategoryId { get; private set; }
-        public Category Category { get; private set; }
-        public int PersonId { get; private set; }
-        public Person Person { get; private set; }
-        public DateTime CreatedAt { get; private set; }
+        public string Description { get;  set; }
+        public decimal Amount { get;  set; }
+        public TransactionType Type { get;  set; }
+        public int CategoryId { get;  set; }
+        public Category Category { get;  set; }
+        public int PersonId { get;  set; }
+        public Person Person { get;  set; }
+        public DateTime CreatedAt { get;  set; }
 
-        private Transaction() { } // Para EF
+        public Transaction() { } 
 
         public Transaction(
             string description,

@@ -1,14 +1,16 @@
 import api from './api';
 import { Category } from '../models/Category';
+import { CategoryPurposes } from '../Constants/EnumCategoryPurposes';
 
 export interface CreateCategoryDto {
   description: string;
-  purpose: string;
+  purpose: CategoryPurposes;
 }
 
 export interface UpdateCategoryDto {
+  id: number;
   description?: string;
-  purpose?: string;
+  purpose?: CategoryPurposes;
 }
 
 export const categoryService = {

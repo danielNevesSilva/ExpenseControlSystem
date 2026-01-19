@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommumUtilTest", "..\..\tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseControlSystem.Test", "..\..\test\ExpenseControlSystem.Test\ExpenseControlSystem.Test.csproj", "{AB4D7C27-6C49-4549-97CD-0E49A7D2F816}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseControlSystem.API.Test", "..\..\test\ExpenseControlSystem.API.Test\ExpenseControlSystem.API.Test\ExpenseControlSystem.API.Test.csproj", "{268A5781-8726-4229-AB80-94073FE4C19C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{AB4D7C27-6C49-4549-97CD-0E49A7D2F816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB4D7C27-6C49-4549-97CD-0E49A7D2F816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB4D7C27-6C49-4549-97CD-0E49A7D2F816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{268A5781-8726-4229-AB80-94073FE4C19C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{268A5781-8726-4229-AB80-94073FE4C19C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{268A5781-8726-4229-AB80-94073FE4C19C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{268A5781-8726-4229-AB80-94073FE4C19C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{5EE7B56D-5370-4957-9CB3-FACEC4889E98} = {0F772AD0-1769-4D55-8D1D-C9C0F4BCD0DE}
 		{98BD99DA-77FF-44DE-A54B-92F504A7279D} = {C0F0A4C2-6FC0-48DF-B84F-066CADAA43BF}
 		{AB4D7C27-6C49-4549-97CD-0E49A7D2F816} = {C0F0A4C2-6FC0-48DF-B84F-066CADAA43BF}
+		{268A5781-8726-4229-AB80-94073FE4C19C} = {C0F0A4C2-6FC0-48DF-B84F-066CADAA43BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C57EA0D8-4272-4F54-B353-3B428F76496D}

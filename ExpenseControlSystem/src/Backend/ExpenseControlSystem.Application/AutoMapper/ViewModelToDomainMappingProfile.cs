@@ -19,6 +19,7 @@ namespace ExpenseControlSystem.Application.AutoMapper
 
             CreateMap<CategoryViewModel, Category>();
             CreateMap<CreateCategoryDto, Category>();
+            CreateMap<UpdateCategoryDto, Category>();
             CreateMap<CreateTransactionDto, Transaction>();
             CreateMap<UpdateTransactionDto, Transaction>();
             CreateMap<TransactionViewModel, Transaction>();

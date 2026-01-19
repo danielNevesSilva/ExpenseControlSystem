@@ -1,4 +1,7 @@
 ﻿// API/Controllers/CategoryController.cs
+using ExpenseControlSystem.Application.Aplications;
+using ExpenseControlSystem.Application.Dto;
+using ExpenseControlSystem.Application.Exceptions;
 using ExpenseControlSystem.Application.Interfaces;
 using ExpenseControlSystem.Application.NovaPasta;
 using ExpenseControlSystem.Application.ViewModel;
@@ -12,15 +15,15 @@ namespace ExpenseControlSystem.API.Controllers
     public class CategoryController : ControllerBase
     {
         private readonly IAppCategory _appCategory;
+        private readonly IAppTransaction _appTransaction;
 
-        public CategoryController(IAppCategory appCategory)
+        public CategoryController(IAppCategory appCategory, IAppTransaction appTransaction)
         {
             _appCategory = appCategory;
+            _appTransaction = appTransaction;
         }
 
-        /// <summary>
-        /// Retorna todas as categorias
-        /// </summary>
+   
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<CategoryViewModel>), 200)]
         [ProducesResponseType(500)]
@@ -58,6 +61,10 @@ namespace ExpenseControlSystem.API.Controllers
 
                 return Ok(category);
             }
+            catch (ErrorOnValidationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
             catch (KeyNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
@@ -68,10 +75,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Retorna categorias por finalidade (purpose)
-        /// </summary>
-        /// <param name="purpose">Finalidade (Expense, Income, Both)</param>
+      
         [HttpGet("purpose/{purpose}")]
         [ProducesResponseType(typeof(IEnumerable<CategoryViewModel>), 200)]
         [ProducesResponseType(500)]
@@ -88,10 +92,6 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Cria uma nova categoria
-        /// </summary>
-        /// <param name="category">Dados da categoria</param>
         [HttpPost]
         [ProducesResponseType(typeof(CategoryViewModel), 201)]
         [ProducesResponseType(400)]
@@ -108,6 +108,10 @@ namespace ExpenseControlSystem.API.Controllers
                 await _appCategory.AddAsync(category);
                 return CreatedAtAction(nameof(GetById), new { id = category.Id }, category);
             }
+            catch (ErrorOnValidationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
             catch (ArgumentException ex)
             {
                 return BadRequest(new { message = ex.Message });
@@ -122,17 +126,12 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Atualiza uma categoria existente
-        /// </summary>
-        /// <param name="id">ID da categoria</param>
-        /// <param name="category">Dados atualizados</param>
         [HttpPut("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> Update(int id, [FromBody] CategoryViewModel category)
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateCategoryDto category)
         {
             try
             {
@@ -149,6 +148,10 @@ namespace ExpenseControlSystem.API.Controllers
                 await _appCategory.UpdateAsync(category);
                 return NoContent();
             }
+            catch (ErrorOnValidationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
             catch (KeyNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
@@ -160,6 +163,38 @@ namespace ExpenseControlSystem.API.Controllers
             catch (InvalidOperationException ex)
             {
                 return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { message = "Erro interno no servidor" });
+            }
+        }
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                // Primeiro busca a pessoa para deletar
+                var category = await _appCategory.GetByIdAsync(id);
+                var transacion = await _appTransaction.GetAllAsync();
+
+                bool hasTransactions = transacion.Any(t => t.CategoryId == id);
+
+                if (hasTransactions is true)
+                {
+                    return BadRequest(new { message = $"Não é possivel excluir essa categoria, existe transações relacionadas." });
+                }
+
+                await _appCategory.DeleteAsync(category);
+                return NoContent();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
             }
             catch (Exception)
             {

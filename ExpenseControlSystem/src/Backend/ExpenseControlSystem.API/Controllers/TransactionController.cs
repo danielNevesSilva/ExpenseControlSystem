@@ -20,9 +20,6 @@ namespace ExpenseControlSystem.API.Controllers
             _appTransaction = appTransaction;
         }
 
-        /// <summary>
-        /// Retorna todas as transações
-        /// </summary>
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<TransactionViewModel>), 200)]
         [ProducesResponseType(500)]
@@ -39,10 +36,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Retorna uma transação específica pelo ID
-        /// </summary>
-        /// <param name="id">ID da transação</param>
+     
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(TransactionViewModel), 200)]
         [ProducesResponseType(404)]
@@ -64,10 +58,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Retorna transações por pessoa
-        /// </summary>
-        /// <param name="personId">ID da pessoa</param>
+     
         [HttpGet("person/{personId}")]
         [ProducesResponseType(typeof(IEnumerable<TransactionViewModel>), 200)]
         [ProducesResponseType(500)]
@@ -84,10 +75,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Retorna transações por categoria
-        /// </summary>
-        /// <param name="categoryId">ID da categoria</param>
+     
         [HttpGet("category/{categoryId}")]
         [ProducesResponseType(typeof(IEnumerable<TransactionViewModel>), 200)]
         [ProducesResponseType(500)]
@@ -104,10 +92,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Cria uma nova transação com todas as validações de negócio
-        /// </summary>
-        /// <param name="viewModel">Dados da transação</param>
+   
         [HttpPost]
         [ProducesResponseType(typeof(TransactionViewModel), 201)]
         [ProducesResponseType(400)]
@@ -116,20 +101,19 @@ namespace ExpenseControlSystem.API.Controllers
         {
             try
             {
-                // Validação automática do FluentValidation (se configurado)
                 if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
                 }
                 await _appTransaction.Execute(viewModel);
 
-                // Pega a transação criada para retornar com dados completos
+
                 var createdTransaction = await _appTransaction.GetByIdAsync(viewModel.Id);
                 return CreatedAtAction(nameof(GetById), new { id = viewModel.Id }, createdTransaction);
             }
             catch (ErrorOnValidationException ex)
             {
-                // Validações de negócio (menor idade, categoria incompatível, etc.)
+    
                 return BadRequest(new { message = ex.Message });
             }
             catch (KeyNotFoundException ex)
@@ -150,11 +134,6 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Atualiza uma transação existente
-        /// </summary>
-        /// <param name="id">ID da transação</param>
-        /// <param name="viewModel">Dados atualizados</param>
         [HttpPut("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
@@ -175,7 +154,6 @@ namespace ExpenseControlSystem.API.Controllers
             }
             catch (ErrorOnValidationException ex)
             {
-                // Validações de negócio (menor idade, categoria incompatível, etc.)
                 return BadRequest(new { message = ex.Message });
             }
             catch (KeyNotFoundException ex)
@@ -192,10 +170,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Exclui uma transação
-        /// </summary>
-        /// <param name="id">ID da transação</param>
+     
         [HttpDelete("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
@@ -204,7 +179,6 @@ namespace ExpenseControlSystem.API.Controllers
         {
             try
             {
-                // Primeiro busca a transação
                 var transaction = await _appTransaction.GetByIdAsync(id);
                 if (transaction == null)
                 {
@@ -256,13 +230,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Valida se uma transação pode ser criada para uma pessoa
-        /// (Útil para o front-end validar antes de tentar criar)
-        /// </summary>
-        /// <param name="personId">ID da pessoa</param>
-        /// <param name="type">Tipo da transação</param>
-        /// <param name="categoryId">ID da categoria</param>
+
         [HttpGet("validate")]
         [ProducesResponseType(typeof(bool), 200)]
         [ProducesResponseType(500)]
@@ -273,8 +241,7 @@ namespace ExpenseControlSystem.API.Controllers
         {
             try
             {
-                // Esta validação precisa ser implementada no IAppTransaction
-                // Você pode adicionar um método como: ValidateTransactionForPersonAsync
+              
                 return Ok(new
                 {
                     valid = true,

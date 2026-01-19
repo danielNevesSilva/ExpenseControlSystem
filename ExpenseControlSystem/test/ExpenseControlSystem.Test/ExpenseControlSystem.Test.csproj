@@ -21,11 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Category\" />
-    <Folder Include="Transaction\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\src\Backend\ExpenseControlSystem.Application\ExpenseControlSystem.Application.csproj" />
     <ProjectReference Include="..\CommumUtilTest\CommumUtilTest.csproj" />
   </ItemGroup>

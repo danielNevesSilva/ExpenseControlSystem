@@ -104,5 +104,6 @@ namespace CommumUtilTest.Category
         {
             return new CategoryViewModelBuilder().AsBoth().Build();
         }
+
     }
 }

@@ -1,0 +1,8 @@
+{
+  "CommumUtilTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest",
+  "ExpenseControlSystem.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.API",
+  "ExpenseControlSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application",
+  "ExpenseControlSystem.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain",
+  "ExpenseControlSystem.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Infrastructure",
+  "ExpenseControlSystem.IoC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.IoC"
+}

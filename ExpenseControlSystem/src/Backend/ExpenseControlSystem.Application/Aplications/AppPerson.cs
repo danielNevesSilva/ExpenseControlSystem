@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using ExpenseControlSystem.Application.Dto;
+using ExpenseControlSystem.Application.Exceptions;
 using ExpenseControlSystem.Application.Interfaces;
+using ExpenseControlSystem.Application.Validation;
 using ExpenseControlSystem.Application.ViewModel;
 using ExpenseControlSystem.Domain.Entities;
 using ExpenseControlSystem.Domain.Interfaces.Service;
@@ -24,11 +27,13 @@ namespace ExpenseControlSystem.Application.Aplications
         }
         public async Task AddAsync(PersonViewModel entity)
         {
+            await ValidateRequest(entity);
             var v = _mapper.Map<Person>(entity);
             _servicePerson.AddAsync(v);
         }
         public async Task UpdateAsync(PersonViewModel entity)
         {
+            await ValidateRequest(entity);
             var v = _mapper.Map<Person>(entity);
             _servicePerson.UpdateAsync(v);
         }
@@ -72,6 +77,16 @@ namespace ExpenseControlSystem.Application.Aplications
             GC.SuppressFinalize(true);
         }
 
-        
+        public async Task ValidateRequest(PersonViewModel model)
+        {
+            var v = new PersonValidation();
+            var result = await v.ValidateAsync(model);
+
+            if (!result.IsValid)
+            {
+                var erroMessages = result.Errors.Select(e => e.ErrorMessage).ToList();
+                throw new ErrorOnValidationException(erroMessages);
+            }
+        }
     }
 }

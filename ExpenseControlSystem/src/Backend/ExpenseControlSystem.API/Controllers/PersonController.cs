@@ -1,4 +1,5 @@
-﻿using ExpenseControlSystem.Application.Interfaces;
+﻿using ExpenseControlSystem.Application.Exceptions;
+using ExpenseControlSystem.Application.Interfaces;
 using ExpenseControlSystem.Application.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,9 +16,7 @@ namespace ExpenseControlSystem.API.Controllers
             _appPerson = appPerson;
         }
 
-        /// <summary>
-        /// Retorna todas as pessoas cadastradas
-        /// </summary>
+     
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<PersonViewModel>), 200)]
         [ProducesResponseType(500)]
@@ -34,10 +33,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Retorna uma pessoa específica pelo ID
-        /// </summary>
-        /// <param name="id">ID da pessoa</param>
+      
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(PersonViewModel), 200)]
         [ProducesResponseType(404)]
@@ -47,6 +43,10 @@ namespace ExpenseControlSystem.API.Controllers
             try
             {
                 var person = await _appPerson.GetByIdAsync(id);
+
+                if(person is null)
+                    return NotFound();
+
                 return Ok(person);
             }
             catch (KeyNotFoundException ex)
@@ -59,10 +59,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Retorna uma pessoa com suas transações
-        /// </summary>
-        /// <param name="id">ID da pessoa</param>
+      
         [HttpGet("{id}/with-transactions")]
         [ProducesResponseType(typeof(PersonViewModel), 200)]
         [ProducesResponseType(404)]
@@ -84,9 +81,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Retorna todas as pessoas com suas transações
-        /// </summary>
+       
         [HttpGet("with-transactions")]
         [ProducesResponseType(typeof(IEnumerable<PersonViewModel>), 200)]
         [ProducesResponseType(500)]
@@ -103,10 +98,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Cria uma nova pessoa
-        /// </summary>
-        /// <param name="viewModel">Dados da pessoa</param>
+       
         [HttpPost]
         [ProducesResponseType(typeof(PersonViewModel), 201)]
         [ProducesResponseType(400)]
@@ -123,6 +115,10 @@ namespace ExpenseControlSystem.API.Controllers
                 await _appPerson.AddAsync(viewModel);
                 return CreatedAtAction(nameof(GetById), new { id = viewModel.Id }, viewModel);
             }
+            catch (ErrorOnValidationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
             catch (ArgumentException ex)
             {
                 return BadRequest(new { message = ex.Message });
@@ -133,11 +129,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Atualiza os dados de uma pessoa existente
-        /// </summary>
-        /// <param name="id">ID da pessoa</param>
-        /// <param name="viewModel">Dados atualizados</param>
+      
         [HttpPut("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
@@ -160,6 +152,10 @@ namespace ExpenseControlSystem.API.Controllers
                 await _appPerson.UpdateAsync(viewModel);
                 return NoContent();
             }
+            catch (ErrorOnValidationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
             catch (KeyNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
@@ -174,10 +170,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Exclui uma pessoa (e suas transações em cascata)
-        /// </summary>
-        /// <param name="id">ID da pessoa</param>
+        
         [HttpDelete("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
@@ -186,7 +179,6 @@ namespace ExpenseControlSystem.API.Controllers
         {
             try
             {
-                // Primeiro busca a pessoa para deletar
                 var person = await _appPerson.GetByIdAsync(id);
                 if (person == null)
                 {
@@ -195,6 +187,10 @@ namespace ExpenseControlSystem.API.Controllers
 
                 await _appPerson.DeleteAsync(person);
                 return NoContent();
+            }
+            catch (ErrorOnValidationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
             }
             catch (KeyNotFoundException ex)
             {
@@ -206,10 +202,7 @@ namespace ExpenseControlSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Verifica se uma pessoa existe
-        /// </summary>
-        /// <param name="id">ID da pessoa</param>
+
         [HttpGet("{id}/exists")]
         [ProducesResponseType(typeof(bool), 200)]
         [ProducesResponseType(500)]

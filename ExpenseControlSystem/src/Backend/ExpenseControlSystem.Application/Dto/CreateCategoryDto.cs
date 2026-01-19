@@ -1,4 +1,5 @@
 ﻿using ExpenseControlSystem.Application.ViewModel;
+using ExpenseControlSystem.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,6 +15,6 @@ namespace ExpenseControlSystem.Application.NovaPasta
         public string Description { get; set; }
 
         [Required]
-        public string Purpose{get; set;}
+        public PurposeType Purpose{get; set;}
     }
 }

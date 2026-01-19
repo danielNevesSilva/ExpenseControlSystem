@@ -4,9 +4,10 @@ namespace ExpenseControlSystem.Domain.Entities
 {
     public class Category : BaseEntity
     {
-        public string Description { get; private set; }
-        public PurposeType Purpose { get; private set; }
+        public string Description { get;  set; }
+        public PurposeType Purpose { get;  set; }
 
+        public Category(){}
         public Category(string description, PurposeType purpose)
         {
             Description = description;

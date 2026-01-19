@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj": {}
+    "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj": {
+    "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj",
         "projectName": "ExpenseControlSystem.Application",
-        "projectPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj",
-        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\obj\\",
+        "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj",
+        "packagesPath": "C:\\Users\\Dnsilva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dnsilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj": {
-                "projectPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj"
+              "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj": {
+                "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj"
               }
             }
           }
@@ -46,9 +46,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -83,24 +83,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj": {
+    "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj",
         "projectName": "ExpenseControlSystem.Domain",
-        "projectPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj",
-        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj",
+        "packagesPath": "C:\\Users\\Dnsilva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dnsilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -125,9 +125,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -148,24 +148,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj": {
+    "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj",
+        "projectUniqueName": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj",
         "projectName": "CommumUtilTest",
-        "projectPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj",
-        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\obj\\",
+        "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj",
+        "packagesPath": "C:\\Users\\Dnsilva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dnsilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -180,8 +180,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj": {
-                "projectPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj"
+              "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj": {
+                "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj"
+              },
+              "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj": {
+                "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Domain\\ExpenseControlSystem.Domain.csproj"
               }
             }
           }
@@ -194,9 +197,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -227,24 +230,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj": {
+    "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj",
+        "projectUniqueName": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj",
         "projectName": "ExpenseControlSystem.Test",
-        "projectPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj",
-        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\obj\\",
+        "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\ExpenseControlSystem.Test.csproj",
+        "packagesPath": "C:\\Users\\Dnsilva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\ExpenseControlSystem.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dnsilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -259,11 +262,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj": {
-                "projectPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj"
+              "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj": {
+                "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\src\\Backend\\ExpenseControlSystem.Application\\ExpenseControlSystem.Application.csproj"
               },
-              "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj": {
-                "projectPath": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj"
+              "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj": {
+                "projectPath": "C:\\Users\\Dnsilva\\ProjetoS\\ExpenseControlSystem\\ExpenseControlSystem\\test\\CommumUtilTest\\CommumUtilTest.csproj"
               }
             }
           }
@@ -276,9 +279,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -317,7 +320,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

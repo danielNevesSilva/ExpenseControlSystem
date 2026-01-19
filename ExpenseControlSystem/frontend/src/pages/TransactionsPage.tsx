@@ -357,7 +357,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     {getFilteredCategories().map((category) => (
       <MenuItem key={category.id} value={category.id}>
         {category.description} 
-        ({category.purpose === '1' || category.purpose === '1' ? 'Despesa' : 'Receita'})
+        ({category.purpose === 1 ? 'Despesa' : 'Receita'})
       </MenuItem>
     ))}
   </Select>

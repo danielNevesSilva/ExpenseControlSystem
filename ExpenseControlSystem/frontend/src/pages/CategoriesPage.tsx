@@ -25,16 +25,21 @@ import {
 import { Add, Edit, Delete } from '@mui/icons-material';
 import { categoryService } from '../services/categoryService';
 import { Category } from '../models/Category';
+import { CategoryHelper } from '../utils/categoryHelper';
+import { CategoryPurposes } from '../Constants/EnumCategoryPurposes';
 
 const CategoriesPage = () => {
+  const [editingCategory, setEditingCategory] = useState<Category | null>(null);
+  const [successMessage, setSuccessMessage] = useState('');
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [openDialog, setOpenDialog] = useState(false);
   const [formData, setFormData] = useState({
+    id: 0,
     description: '',
-    purpose: 'Expense'
-  });
+    purpose: CategoryPurposes.Expense.toString()
+    });
 
   const loadCategories = async () => {
     try {
@@ -54,34 +59,67 @@ const CategoriesPage = () => {
     loadCategories();
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      await categoryService.create(formData);
-      setOpenDialog(false);
-      setFormData({ description: '', purpose: 'Expense' });
-      loadCategories();
-    } catch (err) {
-      setError('Erro ao criar categoria');
-      console.error(err);
-    }
-  };
+ const handleOpenEditDialog = (categoryEdit: Category) => {
+  setEditingCategory(categoryEdit);
+  setFormData({
+    id: categoryEdit.id,
+    description: categoryEdit.description,
+    purpose: categoryEdit.purpose.toString()
+  });
+  setOpenDialog(true);
+};
+const resetForm = () => {
+  setFormData({
+    id: 0,
+    description: '',
+    purpose: ''
+  });
+  setEditingCategory(null);
+};
 
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  try {
+    const payload = {
+      id: formData.id,
+      description: formData.description,
+      purpose: parseInt(formData.purpose) as CategoryPurposes 
+    };
+    
+    if (editingCategory) {
+      await categoryService.update(editingCategory.id, payload);
+      setSuccessMessage('Categoria atualizada com sucesso!');
+    } else {
+      await categoryService.create(payload);
+      setSuccessMessage('Categoria Criada com sucesso!');
+    }
+    setOpenDialog(false);
+    resetForm();
+    loadCategories();
+    // ...
+  } catch (err: any) {
+    const errorMsg = err.response?.data?.message || 'Erro ao salvar Categoria';
+    setError(errorMsg);
+  }
+  
+
+
+};
   const handleDelete = async (id: number) => {
     if (window.confirm('Tem certeza que deseja excluir esta categoria?')) {
       try {
         await categoryService.delete(id);
         loadCategories();
-      } catch (err) {
-        setError('Erro ao excluir categoria');
-        console.error(err);
+      } catch (err: any) {
+        const errorMsg = err.response?.data?.message || 'Erro ao excluir Categoria';
+         setError(errorMsg);
       }
     }
   };
 
   const purposeColors = {
-    Expense: 'error',
-    Income: 'success'
+    1: 'error',
+    2: 'success'
   };
 
   return (
@@ -91,7 +129,7 @@ const CategoriesPage = () => {
         <Button
           variant="contained"
           startIcon={<Add />}
-          onClick={() => setOpenDialog(true)}
+          onClick={() => {setOpenDialog(true);resetForm();}}
         >
           Nova Categoria
         </Button>
@@ -133,8 +171,8 @@ const CategoriesPage = () => {
                     <TableCell>{category.description}</TableCell>
                     <TableCell>
                       <Chip 
-                        label={category.purpose} 
-                        color={purposeColors[category.purpose as keyof typeof purposeColors] as any}
+                        label={CategoryHelper.getPurposeName(category.purpose)}
+                        color={category.purpose === CategoryPurposes.Expense ? 'error' : 'success'}
                         size="small"
                       />
                     </TableCell>
@@ -142,7 +180,11 @@ const CategoriesPage = () => {
                       {new Date(category.createdAt).toLocaleDateString('pt-BR')}
                     </TableCell>
                     <TableCell>
-                      <IconButton color="primary" size="small">
+                      <IconButton 
+                      color="primary"
+                       size="small"
+                       onClick={() => handleOpenEditDialog(category)}
+                       title="Editar">
                         <Edit />
                       </IconButton>
                       <IconButton 
@@ -184,8 +226,8 @@ const CategoriesPage = () => {
               onChange={(e) => setFormData({ ...formData, purpose: e.target.value })}
               required
             >
-              <MenuItem value="Expense">Despesa</MenuItem>
-              <MenuItem value="Income">Receita</MenuItem>
+              <MenuItem value={CategoryPurposes.Expense}>Despesa</MenuItem>
+              <MenuItem value={CategoryPurposes.Income}>Receita</MenuItem>
             </TextField>
           </DialogContent>
           <DialogActions>

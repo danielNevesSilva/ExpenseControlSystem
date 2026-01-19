@@ -11,6 +11,7 @@
 	</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Backend\ExpenseControlSystem.Application\ExpenseControlSystem.Application.csproj" />
+    <ProjectReference Include="..\..\src\Backend\ExpenseControlSystem.Domain\ExpenseControlSystem.Domain.csproj" />
   </ItemGroup>
 
 </Project>

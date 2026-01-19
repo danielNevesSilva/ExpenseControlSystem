@@ -2,8 +2,8 @@
 {
     public class BaseEntity
     {
-        public int Id { get; protected set; }
-        public DateTime CreatedAt { get; protected set; } = DateTime.UtcNow;
-        public DateTime? UpdatedAt { get; protected set; }
+        public int Id { get;  set; }
+        public DateTime CreatedAt { get;  set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get;  set; }
     }
 }
