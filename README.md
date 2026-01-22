@@ -1,45 +1,34 @@
-Expense Control System
+# 💰 Expense Control System
 
-Sistema de controle de gastos residenciais desenvolvido para o processo seletivo da Maxiprod.
+![.NET](https://img.shields.io/badge/.NET-8-512BD4?logo=dotnet)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)
+![SQLite](https://img.shields.io/badge/SQLite-3-003B57?logo=sqlite)
 
-Tecnologias
+Sistema full stack para controle financeiro pessoal desenvolvido com **Clean Architecture**, implementando regras de negócio complexas e boas práticas de desenvolvimento.
 
-Back-end
-	•	.NET 8
-	•	Entity Framework Core
-	•	SQLite
-	•	AutoMapper
-	•	FluentValidation
-	•	xUnit + Moq
+## 🖼️ Demonstração do Sistema
 
-Front-end
-	•	React 18
-	•	TypeScript
-	•	Vite
-	•	Axios
-	•	Tailwind CSS
+<div align="center">
 
-Funcionalidades
-	•	Cadastro de pessoas (CRUD)
-	•	Cadastro de categorias (Expense / Income / Both)
-	•	Cadastro de transações com regras de negócio
-	•	Relatórios de totais por pessoa
-	•	Validações complexas (menor de idade, compatibilidade)
-	•	Testes unitários e de integração
-Aquitetura
+### 🏠 **Dashboard Principal**
+![Dashboard](https://github.com/user-attachments/assets/2d843168-e2f5-462d-b9c9-04023703402b)
+*Visão geral do sistema com resumo financeiro*
 
-ExpenseControlSystem/
-├── src/
-│   ├── Backend/ (Clean Architecture)
-│   │   ├── Domain/
-│   │   ├── Application/
-│   │   ├── Infrastructure/
-│   │   └── API/
-│   └── Frontend/ (React + TypeScript)
-└── tests/
+### 👥 **Gestão de Pessoas**
+![Pessoas](https://github.com/user-attachments/assets/e6ae9b66-2653-4ca5-882c-31a1423b8110)
+*CRUD completo de pessoas cadastradas no sistema*
 
-![WhatsApp Image 2026-01-19 at 20 06 42](https://github.com/user-attachments/assets/2d843168-e2f5-462d-b9c9-04023703402b)
-![WhatsApp Image 2026-01-19 at 20 07 04](https://github.com/user-attachments/assets/e6ae9b66-2653-4ca5-882c-31a1423b8110)
-![WhatsApp Image 2026-01-19 at 20 07 28](https://github.com/user-attachments/assets/135b2ac3-69e2-49c1-bb91-dec8eb4c2e61)
-![WhatsApp Image 2026-01-19 at 20 09 51](https://github.com/user-attachments/assets/fa822089-e747-4842-b7b5-4826fea826a0)
-![WhatsApp Image 2026-01-19 at 20 10 16](https://github.com/user-attachments/assets/cd56628d-c59c-4b94-bde7-053d027c229a)
+### 📂 **Categorias de Transações**
+![Categorias](https://github.com/user-attachments/assets/135b2ac3-69e2-49c1-bb91-dec8eb4c2e61)
+*Categorias organizadas por finalidade (Despesa, Receita, Ambos)*
+
+### 💳 **Registro de Transações**
+![Transações](https://github.com/user-attachments/assets/fa822089-e747-4842-b7b5-4826fea826a0)
+*Formulário com validações em tempo real e regras de negócio*
+
+### 📊 **Relatórios Financeiros**
+![Relatórios](https://github.com/user-attachments/assets/cd56628d-c59c-4b94-bde7-053d027c229a)
+*Totais por pessoa com saldo, receitas e despesas*
+
+</div>
