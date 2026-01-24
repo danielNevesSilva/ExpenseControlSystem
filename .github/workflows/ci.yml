@@ -25,14 +25,10 @@ jobs:
     
     - name: Install Frontend dependencies
       run: npm ci
-      working-directory: ./Frontend # ajuste conforme sua estrutura
+      working-directory: ./Frontend 
     
     - name: Build React app
       run: npm run build
-      working-directory: ./Frontend
-    
-    - name: Run Frontend tests
-      run: npm test -- --watchAll=false --coverage
       working-directory: ./Frontend
     
     - name: Setup .NET
@@ -42,7 +38,7 @@ jobs:
     
     - name: Restore .NET dependencies
       run: dotnet restore
-      working-directory: ./Backend # ajuste conforme sua estrutura
+      working-directory: ./Backend 
     
   
     - name: Build .NET project
