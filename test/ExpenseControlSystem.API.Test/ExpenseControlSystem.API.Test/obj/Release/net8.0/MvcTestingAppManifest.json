@@ -1,0 +1,8 @@
+{
+  "CommumUtilTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\test\\CommumUtilTest",
+  "ExpenseControlSystem.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\Backend\\ExpenseControlSystem.API",
+  "ExpenseControlSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\Backend\\ExpenseControlSystem.Application",
+  "ExpenseControlSystem.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\Backend\\ExpenseControlSystem.Domain",
+  "ExpenseControlSystem.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\Backend\\ExpenseControlSystem.Infrastructure",
+  "ExpenseControlSystem.IoC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\danie\\Projects\\C#\\ExpenseControlSystem\\Backend\\ExpenseControlSystem.IoC"
+}
