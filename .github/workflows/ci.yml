@@ -24,7 +24,7 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
     
     - name: Install Frontend dependencies
-      run: CI=false npm ci
+      run:  npm install
       working-directory: ./Frontend 
     
     - name: Build React app
