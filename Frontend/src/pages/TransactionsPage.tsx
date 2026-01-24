@@ -1,5 +1,3 @@
-import { Snackbar } from '@mui/material';
-import { Close } from '@mui/icons-material';
 import React, { useEffect, useState } from 'react';
 import {
   Typography,
@@ -37,7 +35,7 @@ import { Person } from '../models/Person';
 
 const TransactionsPage = () => {
   const [editingTransaction, setEditingTransaction] = useState<Transaction | null>(null);
-  const [successMessage, setSuccessMessage] = useState('');
+  const [, setSuccessMessage] = useState('');
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [persons, setPersons] = useState<Person[]>([]);
@@ -132,13 +130,6 @@ const resetForm = () => {
   setEditingTransaction(null);
 };
 
-// Função para abrir diálogo de criação
-const handleOpenCreateDialog = () => {
-  resetForm();
-  setOpenDialog(true);
-};
-
-// Função DELETE atualizada
 const handleDelete = async (id: number) => {
   if (!window.confirm('Tem certeza que deseja excluir esta transação?')) {
     return;
@@ -398,7 +389,3 @@ const handleSubmit = async (e: React.FormEvent) => {
 };
 
 export default TransactionsPage;
-
-function setEditingPerson(person: Person) {
-    throw new Error('Function not implemented.');
-}

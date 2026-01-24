@@ -26,7 +26,7 @@ import { Person } from '../models/Person';
 
 const PersonsPage = () => {
   const [editingPerson, setEditingPerson] = useState<Person | null>(null);
-  const [successMessage, setSuccessMessage] = useState('');
+  const [, setSuccessMessage] = useState('');
   const [persons, setPersons] = useState<Person[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -66,7 +66,6 @@ const PersonsPage = () => {
   setOpenDialog(true);
 };
 
-// Função para resetar o formulário
 const resetForm = () => {
   setFormData({
     id: 0,
@@ -76,13 +75,6 @@ const resetForm = () => {
   setEditingPerson(null);
 };
 
-// Função para abrir diálogo de criação
-const handleOpenCreateDialog = () => {
-  resetForm();
-  setOpenDialog(true);
-};
-
-// Função DELETE atualizada
 const handleDelete = async (id: number) => {
   if (!window.confirm('Tem certeza que deseja excluir esta pessoa?')) {
     return;

@@ -30,7 +30,7 @@ import { CategoryPurposes } from '../Constants/EnumCategoryPurposes';
 
 const CategoriesPage = () => {
   const [editingCategory, setEditingCategory] = useState<Category | null>(null);
-  const [successMessage, setSuccessMessage] = useState('');
+  const [, setSuccessMessage] = useState('');
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -115,11 +115,6 @@ const handleSubmit = async (e: React.FormEvent) => {
          setError(errorMsg);
       }
     }
-  };
-
-  const purposeColors = {
-    1: 'error',
-    2: 'success'
   };
 
   return (

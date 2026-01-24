@@ -21,7 +21,7 @@ import './App.css';
 
 function App() {
   const [backendStatus, setBackendStatus] = useState<'checking' | 'online' | 'offline'>('checking');
-  const [testData, setTestData] = useState<any>(null);
+  const [, setTestData] = useState<any>(null);
 
   // Testa conexão com backend
   useEffect(() => {
@@ -30,10 +30,8 @@ function App() {
         const data = await personService.getAll();
         setBackendStatus('online');
         setTestData(data);
-        console.log('✅ Backend conectado! Dados:', data);
       } catch (error) {
         setBackendStatus('offline');
-        console.error('❌ Backend offline:', error);
       }
     };
 
@@ -49,7 +47,6 @@ function App() {
               Controle de Despesas
             </Typography>
             
-            {/* Status do backend */}
             <Box sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
               {backendStatus === 'checking' && (
                 <CircularProgress size={20} color="inherit" sx={{ mr: 1 }} />
@@ -66,7 +63,7 @@ function App() {
               )}
             </Box>
 
-            {/* Menu */}
+            {}
             <Button color="inherit" component={Link} to="/" startIcon={<Home />}>
               Home
             </Button>
@@ -90,7 +87,7 @@ function App() {
           {/* Alerta se backend offline */}
           {backendStatus === 'offline' && (
             <Alert severity="error" sx={{ mb: 3 }}>
-              Backend offline! Verifique se o servidor .NET está rodando em https://localhost:7174
+              offline!
             </Alert>
           )}
 

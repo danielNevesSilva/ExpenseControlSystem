@@ -29,8 +29,8 @@ const Home = () => {
     totalBalance: 0
   });
 
-const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+const [, setLoading] = useState(true);
+  const [, setError] = useState('');
 
   useEffect(() => {
     loadDashboardStats();
@@ -48,14 +48,6 @@ const [loading, setLoading] = useState(true);
     } finally {
       setLoading(false);
     }
-  };
-
-  // Função para formatar valor monetário
-  const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(value);
   };
 
   return (
