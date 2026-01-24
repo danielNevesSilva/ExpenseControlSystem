@@ -1,0 +1,55 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+env:
+  DOTNET_VERSION: '8.x' # ou '6.x', '7.x' conforme sua versão
+  NODE_VERSION: '20.x' # ou a versão que você usa
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    
+    - name: Install Frontend dependencies
+      run: npm ci
+      working-directory: ./Frontend # ajuste conforme sua estrutura
+    
+    - name: Build React app
+      run: npm run build
+      working-directory: ./Frontend
+    
+    - name: Run Frontend tests
+      run: npm test -- --watchAll=false --coverage
+      working-directory: ./Frontend
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+    
+    - name: Restore .NET dependencies
+      run: dotnet restore
+      working-directory: ./Backend # ajuste conforme sua estrutura
+    
+  
+    - name: Build .NET project
+      run: dotnet build --configuration Release --no-restore
+      working-directory: ./Backend
+    
+ 
+    - name: Run .NET tests
+      run: dotnet test --configuration Release --no-build --verbosity normal
+      working-directory: ./Backend
