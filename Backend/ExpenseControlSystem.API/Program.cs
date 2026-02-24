@@ -2,6 +2,7 @@ using ExpenseControlSystem.Infrastructure.Data;
 using ExpenseControlSystem.IoC;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,15 @@ if (builder.Environment.IsEnvironment("Test"))
 {
     builder.Services.AddDbContext<Context>(options =>
         options.UseInMemoryDatabase("TestDb"));
+}
+else
+{
+
+    builder.Services.AddDbContext<Context>(options =>
+    {
+        options.UseSqlite(
+            builder.Configuration.GetConnectionString("Default"));
+    });
 }
 
 builder.Services.AddControllers();
@@ -29,7 +39,7 @@ builder.Services.AddCors(options =>
         });
 });
 
-NativeInjectorBootStrapper.RegiiterServices(builder.Services);
+NativeInjectorBootStrapper.RegiterServices(builder.Services);
 
 var app = builder.Build();
 
