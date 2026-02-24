@@ -1,0 +1,7 @@
+services:
+  api:
+    build: .
+    ports:
+      - "5000:8080"
+    volumes:
+      - ./Database:/app/Database

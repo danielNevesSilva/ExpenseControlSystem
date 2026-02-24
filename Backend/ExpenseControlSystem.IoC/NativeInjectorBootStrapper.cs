@@ -18,7 +18,7 @@ namespace ExpenseControlSystem.IoC
 {
     public class NativeInjectorBootStrapper
     {
-        public static void RegiiterServices(IServiceCollection service)
+        public static void RegiterServices(IServiceCollection service)
         {
             service.AddAutoMapperSetup();
 
