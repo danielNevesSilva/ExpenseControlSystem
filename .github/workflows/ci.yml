@@ -67,10 +67,12 @@ jobs:
 
       - name: Build Docker image
         run: |
+          IMAGE_NAME=$(echo "ghcr.io/${{ github.repository_owner }}/expensecontrol-api" | tr '[:upper:]' '[:lower:]')
           docker build -t ghcr.io/${{ github.repository_owner }}/expensecontrol-api:${{ github.sha }} ./Backend
           docker tag ghcr.io/${{ github.repository_owner }}/expensecontrol-api:${{ github.sha }} ghcr.io/${{ github.repository_owner }}/expensecontrol-api:latest
 
       - name: Push Docker image
         run: |
+          IMAGE_NAME=$(echo "ghcr.io/${{ github.repository_owner }}/expensecontrol-api" | tr '[:upper:]' '[:lower:]')
           docker push ghcr.io/${{ github.repository_owner }}/expensecontrol-api:${{ github.sha }}
           docker push ghcr.io/${{ github.repository_owner }}/expensecontrol-api:latest
